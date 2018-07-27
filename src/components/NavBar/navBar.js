@@ -1,12 +1,13 @@
 import React from 'react';
 import './navBar.css'
 
-const NavBar = () => {
+const NavBar = props => {
     return (
         <nav className="navBar navbar-expand-lg">
-            <div>Clicky Game</div>
-            <div>Click an image to begin </div>
-            <div>Score: 0 | Top Score:0</div>
+            <div className=""> Clicky Game</div>
+            <div>{props.scores.topMessage} </div>
+            <div>Score: {props.scores.score} |
+             Top Score: {props.scores.topScore} </div>
         </nav>
     );
 };

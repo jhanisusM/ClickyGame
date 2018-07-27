@@ -10,35 +10,66 @@ import "./App.css";
 class App extends Component {
 
   state = {
-    friends
+    friends,
+    score: 0,
+    topScore: 0,
+    clicked: [],
+    topMessage: "Click an image to begin"
   };
 
   removeFriend = id => {
     const friends = this.state.friends.filter(friend => friend.id !== id);
     this.setState({ friends });
-    console.log("Fire");
+  };
+
+  clickedImage = props => {
+    if (this.state.clicked.includes(props.id) === false) {
+      this.state.clicked.push(props.id);
+      this.setState({
+        score: this.state.score + 1,
+      });
+      if (this.state.score >= this.state.topScore) {
+        this.setState((prevState) => ({ 
+          topScore: prevState.score,
+          topMessage:"You guessed correctly!"
+         }))
+      };
+    }
+    else {
+      this.setState({
+        score: 0,
+        clicked: [],
+        topMessage: "You guessed incorrectly!"
+      });
+      if (this.state.score >= this.state.topScore) {
+        this.setState({ topScore: this.state.score })
+      };
+    };
   };
 
 
   render() {
     return (
       <div>
-      <NavBar />
-      <Header />
-      <Wrapper>
-        {this.state.friends.map(item => (
-          <FriendCard
-          removeFriend={this.removeFriend}
-          id={item.id}
-          key={item.id}
-          name={item.name}
-          image={item.image}
-          occupation={item.occupation}
-          location={item.location}
-          />
-        ))}
-      </Wrapper>
-      <Footer />
+        <NavBar
+          scores={this.state}
+        />
+        <Header />
+        <Wrapper>
+          {this.state.friends.map(item => (
+            <FriendCard
+              // removeFriend={this.removeFriend}
+              clickedImage={this.clickedImage}
+              id={item.id}
+              key={item.id}
+              name={item.name}
+              image={item.image}
+              occupation={item.occupation}
+              location={item.location}
+            />
+          ))}
+        </Wrapper>
+        <Footer />
       </div>
     );
   };

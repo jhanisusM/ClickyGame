@@ -2,7 +2,7 @@ import React from "react";
 import "./FriendCard.css";
 
 const FriendCard = props => (
-  <div className="card">
+  <div className="card remove" onClick={()=> props.clickedImage(props)}>
     <div className="img-container">
       <img alt={props.name} src={props.image} />
     </div>
@@ -19,7 +19,7 @@ const FriendCard = props => (
         </li>
       </ul>
     </div>
-    <span className="remove" onClick={()=> props.removeFriend(props.id)} >𝘅</span>
+    {/* <span className="remove" onClick={()=> props.removeFriend(props.id)} >𝘅</span> */}
   </div>
 );
 
