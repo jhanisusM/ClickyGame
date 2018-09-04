@@ -1,7 +1,7 @@
 # Clicky Game
-<img src="https://lh3.googleusercontent.com/5mWO7TT179FKtt2deJUeH82NLbAXem345H7JWNV8xjMePx7_G3pEIHQqNAdCoOUBOeruZjgCsQ4-IRY5bPxw=w1920-h910" />
+<img src="https://image.ibb.co/i0DNee/lgclicky.png" />
 
-<img src="https://lh5.googleusercontent.com/y5LmNkLp1WZvsgXkho37mOMtBvWCGgw865cB3EjF8gd9o8fas0pgJA1dC3149Z8ThoaCXpOL0l1yNBciiP-g=w2940-h5226" />
+
 
 View the live APP @: https://myclickyge.herokuapp.com/
 
