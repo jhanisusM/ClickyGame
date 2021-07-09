@@ -3,8 +3,6 @@
 
 
 
-View the live APP @: https://myclickyge.herokuapp.com/
-
 Clicky Game is a web app that utilizes <strong> React </strong> for the front end. It keeps a score of the user, and restarts the score when the user clicks on the image more than once.
 
 ## Overview
